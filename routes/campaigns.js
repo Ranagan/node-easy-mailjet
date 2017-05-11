@@ -7,7 +7,7 @@ router.post('/createCampaign', function(req, res) {
     let requestData = req.body;
 
     let request = mailjet.post("campaigndraft").request({
-        "Locale": "en_GB",
+        "Locale": "en_US",
         "Sender": requestData.sender,
         "SenderEmail": requestData.senderEmail,
         "Subject": requestData.subject,
