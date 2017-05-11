@@ -23,4 +23,19 @@ router.post('/createCampaign', function(req, res) {
     })
 })
 
+router.post('/campaigndraft', function(req, res){
+    let requestData = req.body;
+
+    let request = mailjet.post("campaigndraft").id(requestData.ID).action("detailcontent").request({
+        "Html-part": requestData.htmlpart,
+        "Text-part": requestData.textpart
+    })
+
+    request.then((result) => {
+        console.log(result.body);
+    }).catch(e) => {
+        console.log(e.statusCode);
+    }
+})
+
 module.exports = router;
