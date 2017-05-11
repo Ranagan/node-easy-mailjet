@@ -23,7 +23,7 @@ router.post('/createCampaign', function(req, res) {
     })
 })
 
-router.post('/campaigndraft', function(req, res){
+router.post('/modifyCampaign', function(req, res){
     let requestData = req.body;
 
     let request = mailjet.post("campaigndraft").id(requestData.ID).action("detailcontent").request({
