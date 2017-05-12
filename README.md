@@ -54,6 +54,11 @@ Example Data:
 
 {API_URL}/campaigns/sendCampaignTest
 
+<aside class="notice">
+    Before sending, the API will check if the draft has all mandatory fields filled in and that they are valid. In case of error, the API will return a 400 Bad Request.
+</aside>
+
+
 Requires:
 
 - "ID" - Campaign ID
