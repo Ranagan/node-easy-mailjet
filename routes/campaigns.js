@@ -69,4 +69,18 @@ router.post('/sendCampaign', function(req, res) {
     })
 })
 
+router.post('/sendCampaignScheduled', function(req, res) {
+    let requestData = req.body;
+
+    let request = mailjet.post("campaigndraft").id(requestData.ID).action("schedule").request({"date": requestData.dateTime;})
+
+    request.then((result) => {
+        console.log(result.body);
+        res.send(result.body);
+    }).catch((err) => {
+        console.log(err.statusCode);
+        res.send(err.statusCode)
+    })
+})
+
 module.exports = router;
