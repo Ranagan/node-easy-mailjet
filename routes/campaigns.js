@@ -56,7 +56,7 @@ router.post('/sendCampaignTest', function(req, res) {
     })
 })
 
-router.post('/sendCampaignImmediately', function(req, res) {
+router.post('/sendCampaign', function(req, res) {
     let requestData = req.body;
 
     let request = mailjet.post("campaigndraft").id(requestData.ID).action("send").request()
