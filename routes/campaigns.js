@@ -20,7 +20,7 @@ router.post('/createCampaign', function(req, res) {
     }).catch((err) => {
         console.log(err.statusCode)
     })
-})
+});
 
 router.post('/modifyCampaign', function(req, res) {
     let requestData = req.body;
@@ -30,6 +30,25 @@ router.post('/modifyCampaign', function(req, res) {
     request.then((result) => {
         console.log(result.body);
         res.send(result.body)
+    }).catch((err) => {
+        console.log(err.statusCode)
+    })
+});
+
+router.post('/sendCampaignTest', function(req, res) {
+    let requestData = req.body;
+
+    let request = mailjet.post("campaigndraft").id(requestData.ID).action("test").request({
+        "Recipients": [
+            {
+                "Email": "ryanflanagan@thewhiskyexchange.com",
+                "Name": "Ryan Flanagan"
+            }
+        ]
+    })
+    request.then((result) => {
+        console.log(result.body);
+        res.send(result.body);
     }).catch((err) => {
         console.log(err.statusCode)
     })
