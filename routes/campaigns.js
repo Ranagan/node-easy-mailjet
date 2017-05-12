@@ -19,6 +19,7 @@ router.post('/createCampaign', function(req, res) {
         res.send(result.body)
     }).catch((err) => {
         console.log(err.statusCode)
+        res.send(statusCode)
     })
 });
 
@@ -51,6 +52,7 @@ router.post('/sendCampaignTest', function(req, res) {
         res.send(result.body);
     }).catch((err) => {
         console.log(err.statusCode)
+        res.send(statusCode)
     })
 })
 
