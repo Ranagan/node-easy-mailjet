@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const mailjet = require('node-mailjet').connect('3edf25f55115d5c66971eb9d9cfd7bfb', '4d50492f8a3768e479ce61c17df330a7');
+const mailjet = require('node-mailjet').connect(process.env.MJ_APIKEY_PUBLIC, process.env.MJ_APIKEY_PRIVATE);
 
 router.post('/createCampaign', function(req, res) {
     let requestData = req.body;
