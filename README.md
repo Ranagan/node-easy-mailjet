@@ -1,3 +1,7 @@
+- [Manage Campaigns](#manage-campaigns)
+- [Manage a Contact List](#manage-a-contact-list)
+
+
 # Deployment
 
 You need to set the environment variables of wherever you host the API for the MailJet Public and Private Keys.
@@ -9,7 +13,7 @@ You need to set the environment variables of wherever you host the API for the M
 # Usage
 ##### All endpoints accept POST methods with JSON.
 
-## Campaigns
+## Manage Campaigns
 
 ### Create a campaign
 
