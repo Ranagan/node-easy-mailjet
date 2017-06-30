@@ -6,7 +6,7 @@ const mailjet = require('node-mailjet').connect(process.env.MJ_APIKEY_PUBLIC, pr
 router.post('/managemany', function(req, res){
     let requestData = req.body;
 
-    let request = mailjet.post("contactslist").id($ID).action("ManageManyContacts").request({
+    let request = mailjet.post("contactslist").id(requestData.id).action("ManageManyContacts").request({
         "Action": "addnoforce",
         "Contacts": [
             {
