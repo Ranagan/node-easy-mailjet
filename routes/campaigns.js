@@ -40,12 +40,18 @@ router.post('/sendCampaignTest', function(req, res) {
     let requestData = req.body;
 
     let request = mailjet.post("campaigndraft").id(requestData.ID).action("test").request({
-        "Recipients": [
+        // In the format of a JSON array,
+        /*
+          [
             {
-                "Email": "ryanflanagan@thewhiskyexchange.com",
-                "Name": "Ryan Flanagan"
+                "Email":"test@example.com",
+                "Name": "Test Test"
             }
         ]
+        */
+
+
+        "Recipients": requestData.recipients
     })
     request.then((result) => {
         console.log(result.body);
