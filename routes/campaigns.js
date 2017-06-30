@@ -50,7 +50,6 @@ router.post('/sendCampaignTest', function(req, res) {
         ]
         */
 
-
         "Recipients": requestData.recipients
     })
     request.then((result) => {
