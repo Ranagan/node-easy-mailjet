@@ -1,5 +1,5 @@
-[Manage Campaigns](#manage-campaigns)
-[Manage a Contact List](#manage-a-contact-list)
+- [Manage Campaigns](#manage-campaigns)
+- [Manage a Contact List](#manage-a-contact-list)
 
 
 # Deployment
