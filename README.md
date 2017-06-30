@@ -36,7 +36,7 @@ Example Data:
 
 Requires:
 
-- "ID" - Campaign ID
+- "id" - Campaign ID
 - "htmlPart" - Html-part
 - "textPart" - Text-part (optional)
 
@@ -60,7 +60,7 @@ Example Data:
 
 Requires:
 
-- "ID" - Campaign ID
+- "id" - Campaign ID
 - "recipients" - Array of Test recipients in the following format:
 
 Example Data:
@@ -85,7 +85,7 @@ Example Data:
 
 Requires:
 
-- "ID"
+- "id"
 
 Example Data:
 

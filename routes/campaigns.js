@@ -26,7 +26,7 @@ router.post('/createCampaign', function(req, res) {
 router.post('/modifyCampaign', function(req, res) {
     let requestData = req.body;
 
-    let request = mailjet.post("campaigndraft").id(requestData.ID).action("detailcontent").request({"Html-part": requestData.htmlpart, "Text-part": requestData.textpart})
+    let request = mailjet.post("campaigndraft").id(requestData.id).action("detailcontent").request({"Html-part": requestData.htmlpart, "Text-part": requestData.textpart})
 
     request.then((result) => {
         console.log(result.body);
@@ -39,7 +39,7 @@ router.post('/modifyCampaign', function(req, res) {
 router.post('/sendCampaignTest', function(req, res) {
     let requestData = req.body;
 
-    let request = mailjet.post("campaigndraft").id(requestData.ID).action("test").request({
+    let request = mailjet.post("campaigndraft").id(requestData.id).action("test").request({
         // In the format of a JSON array,
         /*
           [
@@ -65,7 +65,7 @@ router.post('/sendCampaignTest', function(req, res) {
 router.post('/sendCampaign', function(req, res) {
     let requestData = req.body;
 
-    let request = mailjet.post("campaigndraft").id(requestData.ID).action("send").request()
+    let request = mailjet.post("campaigndraft").id(requestData.id).action("send").request()
     request.then((result) => {
         console.log(result.body)
         res.send(result.body)
@@ -78,7 +78,7 @@ router.post('/sendCampaign', function(req, res) {
 router.post('/sendCampaignScheduled', function(req, res) {
     let requestData = req.body;
 
-    let request = mailjet.post("campaigndraft").id(requestData.ID).action("schedule").request({"date": requestData.dateTime})
+    let request = mailjet.post("campaigndraft").id(requestData.id).action("schedule").request({"date": requestData.dateTime})
 
     request.then((result) => {
         console.log(result.body);
