@@ -24,7 +24,7 @@ router.post('/managemany', function(req, res){
     let requestData = req.body;
 
     let request = mailjet.post("contactslist").id(requestData.id).action("ManageManyContacts").request({
-        "Action": "addnoforce",
+        "Action": requestData.action,
         "Contacts": requestData.contacts
     })
     request.then((result) => {

@@ -7,10 +7,9 @@ You need to set the environment variables of wherever you host the API for the M
 >MJ_APIKEY_PRIVATE = { Your private key }
 
 # Usage
+##### All endpoints accept POST methods with JSON.
 
 ## Campaigns
-
-##### POST Methods
 
 ### Create a campaign
 
@@ -98,5 +97,69 @@ Example Data:
 ```json
 {
     "id": "your campaign id"
+}
+```
+
+## Contact List Management
+
+### Create a Contact List
+
+{API_URL}/contacts/createContactList
+
+Requires:
+
+- "name"
+
+Example Data:
+
+```json
+{
+    "name": "your contact list name"
+}
+```
+
+Will return a JSON response in the following format:
+
+```json
+{
+    "Count": 1,
+    "Data": [
+        {
+            "Address": "",
+            "CreatedAt": "",
+            "ID": "",
+            "IsDeleted": "false",
+            "Name": "your contact list name",
+            "SubscriberCount": ""
+        }
+    ],
+    "Total": 1
+}
+```
+
+
+### Manage a Contact List
+{API_URL}/contacts/managemany
+
+You can use the ID generated and returned in the /createContactList request to manage the subscribers to that contact list.
+
+Requires:
+
+- "id" - contact list ID
+- "action": "your action" - Actions are described [here](https://dev.mailjet.com/guides/?javascript#contact_managemanycontacts)
+- "contacts": JSON array of contacts. Example below.
+
+Example Data:
+
+```json
+{
+	"id": "contact list id",
+	"contacts": [{
+		"Email": "test1@example.com",
+		"Name": "test1"
+	},{
+		"Email": "test2@example.com",
+		"Name": "test2"
+	}]
 }
 ```
