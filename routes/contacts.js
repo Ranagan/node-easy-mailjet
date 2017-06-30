@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const mailjet = require('node-mailjet').connect(process.env.MJ_APIKEY_PUBLIC, process.env.MJ_APIKEY_PRIVATE)
+const mailjet = require('node-mailjet').connect(process.env.MJ_APIKEY_PUBLIC, process.env.MJ_APIKEY_PRIVATE);
 
 router.post('/managemany', function(req, res){
     let requestData = req.body;
@@ -22,4 +22,6 @@ router.post('/managemany', function(req, res){
         console.log(result.body)
         res.send(result.body)
     })
-})
+});
+
+module.exports = router;
