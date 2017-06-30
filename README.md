@@ -1,5 +1,13 @@
 # node-easy-mailjet
 
+# Deployment
+
+You need to set the environment variables of wherever you host the API for the MailJet Public and Private Keys.
+
+>MJ_APIKEY_PUBLIC = { Your public key }
+
+>MJ_APIKEY_PRIVATE = { Your private key }
+
 # Usage
 
 ## Campaigns
